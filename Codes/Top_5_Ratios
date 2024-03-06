@@ -5,6 +5,5 @@ Top 5 most likely ratios and their percentages:
 2   4:1   15.000000
 3   1:1   13.214286
 4   3:2    8.571429
-5   4:3    3.9285717
 
 Here, we take the ratios with values less than 5 to begin with. The code is attached as a .py file.
