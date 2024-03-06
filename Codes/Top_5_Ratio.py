@@ -7,11 +7,14 @@ Created on Wed Mar  6 22:18:02 2024
 
 import pandas as pd
 
-# Function to convert a ratio to a fraction and check if both numerator and denominator are less than 5
+# Function to convert a ratio to a fraction and check if both numerator and denominator are less than 3.5
 def check_ratio_validity(ratio):
     num, denom = map(float, ratio.split(':'))
     fraction = num / denom
-    return num < 5 and denom < 5
+    if fraction <= 3.5:
+        return num and denom
+    else:
+        return None
 
 # Flatten the list of ratios and filter out ratios with values less than 3.5
 valid_ratios = [ratio for sublist in rdf['Ratios'] for ratio in sublist if check_ratio_validity(ratio)]
@@ -26,7 +29,7 @@ ratio_percentages = (ratio_counts / ratio_counts.sum()) * 100
 sorted_ratios = ratio_counts.index.tolist()
 
 # Select top 5 ratios and their percentages
-top_5_ratios = sorted_ratios[:10]
+top_5_ratios = sorted_ratios[:5]
 top_5_percentages = ratio_percentages[top_5_ratios]
 
 # Create a DataFrame for top 5 ratios and percentages
