@@ -7,11 +7,11 @@ Created on Wed Mar  6 22:18:02 2024
 
 import pandas as pd
 
-# Function to convert a ratio to a fraction and check if both numerator and denominator are less than 3.5
+# Function to convert a ratio to a fraction and check if both numerator and denominator are less than 5
 def check_ratio_validity(ratio):
     num, denom = map(float, ratio.split(':'))
     fraction = num / denom
-    return num < 3.5 and denom < 3.5
+    return num < 5 and denom < 5
 
 # Flatten the list of ratios and filter out ratios with values less than 3.5
 valid_ratios = [ratio for sublist in rdf['Ratios'] for ratio in sublist if check_ratio_validity(ratio)]
